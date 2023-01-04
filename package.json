@@ -6,7 +6,7 @@
     "start": "node dist/server.js",
     "start:dev": "nodemon src/server.ts || ts-node src/server.ts",
     "build": "pnpm i || npm i; tsc",
-    "build:dev": "pnpm i || npm i",
+    "build:dev": "pnpm i || npm i; open http://localhost:3000/hello?name=you; pnpm start:dev || npm run start:dev",
     "build:dev:db": "./.bin/build-with-db.sh",
     "test": "jest",
     "test:load": "locust -f ./test/load/locustfile.py",
