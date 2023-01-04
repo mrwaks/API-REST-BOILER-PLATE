@@ -38,7 +38,7 @@ Then run:
 
     pnpm build:dev:db || npm run build:dev:db
 
-You can take a look at the prisma documentation here **-> [Prisma Documentation](https://www.prisma.io/docs) <-**
+You can take a look at the prisma documentation here **-> [Prisma Documentation](https://www.prisma.io/docs)**
 
 ### <ins>**Without database config:**</ins>
 
@@ -52,4 +52,4 @@ The boilerplate uses express-session middleware (session cookie) with mysql, for
 <br>
 It does not use jwt, because security level I do not recommend it.
 <br>
-I advise you to read this article, which explains in a very charming way the reason **-> [Stop using JWT for sessions](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/) <-**
+I advise you to read this article, which explains in a very charming way the reason **-> [Stop using JWT for sessions](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)**
