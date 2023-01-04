@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "strictNullChecks": false,
+        "moduleResolution": "node",
+        "downlevelIteration": true,
+        "types": ["jest"]
+    },
+    "exclude": [
+        "node_modules",
+    ],
+    "include": [
+        "src/**/*",
+        "__test__/**/*",
+    ],
+    "ts-node": {
+        "transpileOnly": true,
+        "files": true,
+    },
+}
