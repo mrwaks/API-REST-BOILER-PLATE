@@ -7,7 +7,12 @@ import config from '../config';
 import { HTTP403Error } from '../classes';
 
 // Types
-import { TEnvironment, Request, Response, NextFunction } from '../types';
+import {
+  IExpressRequest,
+  IExpressResponse,
+  IExpressNextFunction,
+  TEnvironment,
+} from '../types';
 
 const isHeadersExists = (headers: (string | string[])[]) => {
   headers.flat().forEach(header => {
@@ -47,7 +52,7 @@ const isUserAgentsHeaderAllowed = (userAgentHeader: string) => {
   });
 };
 
-const blockClientOutOfBrowser = (env?: TEnvironment) => (req: Request, res: Response, next: NextFunction) => {
+const blockClientOutOfBrowser = (env?: TEnvironment) => (req: IExpressRequest, res: IExpressResponse, next: IExpressNextFunction) => {
   try {
     if (env === 'production') {
       const headers = {

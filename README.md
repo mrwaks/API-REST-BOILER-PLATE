@@ -45,3 +45,11 @@ You can take a look at the prisma documentation here **-> [Prisma Documentation]
 Run:
 
     pnpm build:dev || npm run build:dev
+
+## <ins>**Connection persistence:**</ins>
+
+The boilerplate uses express-session middleware (session cookie) with mysql, for client-side connection persistence.
+<br>
+It does not use jwt, because security level I do not recommend it.
+<br>
+I advise you to read this article, which explains in a very charming way the reason **-> [Stop using JWT for sessions](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/) <-**

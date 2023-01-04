@@ -1,3 +1,5 @@
-'use strict';
+import UserDB from './UserDB.class';
 
-// Logic Database Implementation...
+export {
+  UserDB,
+};

@@ -8,7 +8,7 @@ import config from '../config';
 
 const baseUrl = config.baseURL;
 
-describe('#Test - Greeting routes', () => {
+describe('#Test - Greeting Routes', () => {
   describe('#Test - GET /hello', () => {
     it('should be an http status code 200 OK', async () => {
       await request(baseUrl)

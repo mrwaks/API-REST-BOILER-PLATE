@@ -4,10 +4,15 @@
 import config from '../config';
 
 // Types
-import { TEnvironment, Request, Response, NextFunction } from '../types';
+import {
+  IExpressRequest,
+  IExpressResponse,
+  IExpressNextFunction,
+  TEnvironment,
+} from '../types';
 
 const cors = {
-  dev: (req: Request, res: Response, next: NextFunction) => {
+  dev: (req: IExpressRequest, res: IExpressResponse, next: IExpressNextFunction) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
       'Access-Control-Allow-Headers',
@@ -20,7 +25,7 @@ const cors = {
     res.setHeader('Access-Control-Allow-Credentials', 'true');
     next();
   },
-  prod: (req: Request, res: Response, next: NextFunction) => {
+  prod: (req: IExpressRequest, res: IExpressResponse, next: IExpressNextFunction) => {
     if (
       req.headers.origin &&
       config.permissions.allowed.origins.includes(req.headers.origin)

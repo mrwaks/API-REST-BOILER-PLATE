@@ -5,12 +5,12 @@ import { BaseError } from '../classes';
 
 // Types
 import {
-  HttpStatus, 
-  ValidationError, 
-  ErrorRequestHandler, 
-  Request, 
-  Response,
-  NextFunction, 
+  HttpStatus,
+  IJoiValidationError,
+  IExpressErrorRequestHandler,
+  IExpressRequest,
+  IExpressResponse,
+  IExpressNextFunction,
 } from '../types';
 
 // Setup
@@ -18,7 +18,7 @@ import { logger } from '../setup';
 
 const errorHandler = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  returnError: (error: ErrorRequestHandler, req: Request, res: Response, next: NextFunction) => {
+  returnError: (error: IExpressErrorRequestHandler, req: IExpressRequest, res: IExpressResponse, next: IExpressNextFunction) => {
     if (error instanceof BaseError) {
       const statusCode = error.httpCode || 500;
       logger.error(`[HTTP-ERROR] - StatusCode: ${statusCode} - Reason: ${error.message}`);
@@ -29,7 +29,7 @@ const errorHandler = {
           message: error.message,
         });
     }
-    if (error instanceof ValidationError) {
+    if (error instanceof IJoiValidationError) {
       logger.error(`[HTTP-ERROR] - StatusCode: ${HttpStatus.BADREQUEST} - Reason: ${error.message}`);
       return res
         .status(HttpStatus.BADREQUEST)
@@ -49,7 +49,7 @@ const errorHandler = {
     }
   },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  get404: (req: Request, res: Response) => {
+  get404: (req: IExpressRequest, res: IExpressResponse) => {
     return res
       .status(HttpStatus.NOTFOUND)
       .json({

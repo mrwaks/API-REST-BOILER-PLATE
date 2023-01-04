@@ -4,16 +4,16 @@
 import { successResponse } from '../utils';
 
 // Types
-import { HttpStatus, Request, Response } from '../types';
+import { HttpStatus, IExpressRequest, IExpressResponse } from '../types';
 
 const greetingController = {
-  hello: (req: Request, res: Response) => {
+  hello: (req: IExpressRequest, res: IExpressResponse) => {
     const name = req.query.name;
     const statusCode = HttpStatus.OK;
     const message = `Hello ${name} !`;
     successResponse(res, statusCode, message);
   },
-  bye: (req: Request, res: Response) => {
+  bye: (req: IExpressRequest, res: IExpressResponse) => {
     const name = req.query.name;
     const statusCode = HttpStatus.OK;
     const message = `Goodbye ${name} !`;

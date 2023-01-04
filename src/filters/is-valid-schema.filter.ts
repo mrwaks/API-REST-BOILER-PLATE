@@ -2,14 +2,14 @@
 
 // Types
 import { 
-  TSchemaValidatorOptions,
-  Request,
-  Response,
-  NextFunction,
-  ObjectSchema,
+  TJoiSchemaValidatorOptions,
+  IExpressRequest,
+  IExpressResponse,
+  IExpressNextFunction,
+  IJoiObjectSchema,
 } from '../types';
 
-const isValidSchema = (schema: ObjectSchema, opts: TSchemaValidatorOptions) => async (req: Request, res: Response, next: NextFunction) => {
+const isValidSchema = (schema: IJoiObjectSchema, opts: TJoiSchemaValidatorOptions) => async (req: IExpressRequest, res: IExpressResponse, next: IExpressNextFunction) => {
   try {
     let options: { [key: string]: any } = {};
     

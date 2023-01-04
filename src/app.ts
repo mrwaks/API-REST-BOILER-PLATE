@@ -21,7 +21,7 @@ import { TEnvironment } from './types';
 import config from './config';
 
 // Setup
-import { logger } from './setup';
+import { logger, configSession } from './setup';
 
 const nodeEnv = config.constants.NODE_ENV as TEnvironment;
 
@@ -35,7 +35,8 @@ app
   .use(cookieParser())
   .use(express.urlencoded({ extended: true }))
   .use(cors.env(nodeEnv))
-  .use(blockClientOutOfBrowser(nodeEnv));
+  .use(blockClientOutOfBrowser(nodeEnv))
+  .use(configSession());
 
 routeHandler(app, routes);
 

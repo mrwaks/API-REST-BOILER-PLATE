@@ -1,12 +1,13 @@
 'use strict';
 
 // Types
-import { Application, IRoute } from '../types';
+import { IExpressApplication, IRoute } from '../types';
 
 // Setup
-import { setupController, setupFilter } from '../setup';
+import { setupController, setupFilter, setupAuth } from '../setup';
 
-const routesHandler = (app: Application, routes: IRoute[]) => {
+const routesHandler = (app: IExpressApplication, routes: IRoute[]) => {
+  setupAuth(app, routes);
   setupFilter(app, routes);
   setupController(app, routes);
 };

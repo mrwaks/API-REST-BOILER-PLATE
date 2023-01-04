@@ -4,9 +4,9 @@
 import config from '../config';
 
 // Types
-import { Application, IRoute } from '../types';
+import { IExpressApplication, IRoute } from '../types';
 
-const setupController = (app: Application, routes: IRoute[]) => {
+const setupController = (app: IExpressApplication, routes: IRoute[]) => {
   routes.forEach((route) => {
     if (route.method) {
       return app[route.method](`${config.constants.BASE_URL_DEV}${route.url}`, route.controller);
