@@ -7,6 +7,7 @@
     "start:dev": "nodemon src/server.ts || ts-node src/server.ts",
     "build": "pnpm i || npm i; tsc",
     "build:dev": "pnpm i || npm i",
+    "build:dev:db": "./.bin/build-with-db.sh",
     "test": "jest",
     "test:load": "locust -f ./test/load/locustfile.py",
     "db:generate": "pnpx prisma generate || npx prisma generate",
