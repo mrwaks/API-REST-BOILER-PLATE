@@ -2,7 +2,7 @@
 
 installDependencies() {
     echo "🕐 Installing dependencies...";
-    pnpm build:dev || npm run build:dev;
+    pnpm i || npm i;
     echo -e "\n✅ Dependencies successfully installed.";
 }
 
@@ -20,7 +20,7 @@ dataMigration() {
 
 startServer() {
     echo -e "\n🕐 Starting the server...";
-    open "http://localhost:3000/hello?name=you";
+    open "http://localhost:3000/api/v1/hello?name=you";
     pnpm start:dev || npm run start:dev;
 }
 
