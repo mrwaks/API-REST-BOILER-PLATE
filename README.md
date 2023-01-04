@@ -11,7 +11,7 @@
 
 ## <ins>**Dev Build:**</ins>
 
-### <ins>**Database:**</ins>
+### <ins>**With database config:**</ins>
 
 If you want to use the database with Prisma, If you want to use the database with Prisma, you will first have to decide what type of database you want to use (mysql, postgresql, mongodb, etc...)
 
@@ -39,3 +39,9 @@ Then run:
     pnpm build:dev:db || npm run build:dev:db
 
 You can take a look at the prisma documentation here **-> [Prisma Documentation](https://www.prisma.io/docs) <-**
+
+### <ins>**Without database config:**</ins>
+
+Run:
+
+    pnpm build:dev || npm run build:dev
