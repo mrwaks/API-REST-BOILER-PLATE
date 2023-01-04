@@ -48,8 +48,8 @@ const errorHandler = {
         });
     }
   },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   get404: (req: Request, res: Response) => {
-    logger.error(`[HTTP-ERROR] - StatusCode: ${HttpStatus.NOTFOUND} - Reason: ${'Page Not Found'}`);
     return res
       .status(HttpStatus.NOTFOUND)
       .json({
